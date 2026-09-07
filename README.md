@@ -31,20 +31,22 @@ una aplicación de comercio electrónico que incluya:
 ## Arquitectura del repositorio
 
 El repositorio sigue una arquitectura de 3 capas desacopladas:
+
+```
 lenios-rellenos-U2-R2/
 ├── .github/
-│ └── CODEOWNERS # Control de propietarios por módulo
+│   └── CODEOWNERS        # Control de propietarios por módulo
 ├── .husky/
-│ ├── pre-commit # Ejecuta lint-staged antes de commitear
-│ └── commit-msg # Valida formato Conventional Commits
-├── frontend/ # Capa de presentación (HTML5/CSS3/JS)
-│ └── src/
-├── backend/ # Capa de lógica y API REST (Node.js/Express)
-│ └── src/
-├── commitlint.config.js # Reglas de formato de commits
-├── eslint.config.mjs # Reglas de calidad de código
-└── package.json # Dependencias y scripts del proyecto
-
+│   ├── pre-commit        # Ejecuta lint-staged antes de commitear
+│   └── commit-msg        # Valida formato Conventional Commits
+├── frontend/             # Capa de presentación (HTML5/CSS3/JS)
+│   └── src/
+├── backend/              # Capa de lógica y API REST (Node.js/Express)
+│   └── src/
+├── commitlint.config.js  # Reglas de formato de commits
+├── eslint.config.mjs     # Reglas de calidad de código
+└── package.json          # Dependencias y scripts del proyecto
+```
 
 ---
 
@@ -110,7 +112,7 @@ refactor: refactorización de código
 
 ---
 
-## 🚀 Milestones del proyecto
+##  Milestones del proyecto
 
 | Milestone | Descripción | Fecha límite |
 |-----------|-------------|--------------|
