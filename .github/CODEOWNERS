@@ -1,0 +1,10 @@
+# Leños Rellenos - Control de propietarios por módulo
+
+# Frontend - responsable del catálogo, carrito y UI
+/frontend/ @Manuel-Mata
+
+# Backend - responsable de la API REST y lógica de negocio
+/backend/ @Manuel-Mata
+
+# Configuración del proyecto
+/.github/ @Manuel-Mata
