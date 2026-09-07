@@ -112,6 +112,82 @@ refactor: refactorización de código
 
 ---
 
+##  Fundamento Teórico
+
+### ¿Por qué el versionamiento es indispensable en Leños Rellenos?
+
+El versionamiento es esencial en este proyecto porque el equipo trabaja 
+simultáneamente en múltiples módulos interdependientes:
+
+- El **catálogo** cambia constantemente con nuevos productos y precios
+- El **carrito** depende del estado actualizado del catálogo
+- El **panel admin** maneja datos sensibles de clientes y pedidos
+- La **integración WhatsApp** requiere coordinación entre frontend y backend
+
+Sin control de versiones, cualquier cambio en un módulo podría romper 
+otro, y sería imposible rastrear quién modificó qué y cuándo.
+
+---
+
+### Git vs SVN — Justificación para el caso
+
+| Criterio | Git | SVN |
+|----------|-----|-----|
+| Modelo | Distribuido — cada dev tiene copia completa | Centralizado — depende del servidor |
+| Trabajo offline | Sí | No |
+| Ramas | Ligeras y rápidas | Costosas y lentas |
+| Colaboración | PRs, code review, forks | Commits directos al servidor |
+| Velocidad | Alta | Baja en repos grandes |
+
+**Elección: Git** — porque Leños Rellenos requiere:
+- Múltiples features en paralelo (catálogo, carrito, WhatsApp, admin)
+- Trabajo offline desde diferentes ubicaciones
+- Ramas ligeras para cada módulo del MVP
+- Historial completo y reversión rápida ante errores en producción
+
+---
+
+### Selección de plataforma — GitHub vs GitLab vs Bitbucket
+
+| Criterio | GitHub | GitLab | Bitbucket |
+|----------|--------|--------|-----------|
+| Costo | Gratuito para repos públicos | Gratuito con límites | Gratuito hasta 5 usuarios |
+| Facilidad de uso | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ |
+| CI/CD integrado | GitHub Actions | GitLab CI | Pipelines |
+| Comunidad | La más grande | Media | Pequeña |
+| Proyectos/Kanban | GitHub Projects | GitLab Boards | Jira integrado |
+
+**Elección: GitHub** — porque Leños Rellenos es un negocio familiar con 
+recursos limitados que prioriza:
+- **Gratuidad** — sin costo para repositorios públicos
+- **Simplicidad** — interfaz intuitiva para el equipo pequeño
+- **GitHub Projects** — tablero Kanban integrado sin herramientas externas
+- **GitHub Actions** — CI/CD gratuito para automatización futura
+
+---
+
+### Comparativa de flujos de trabajo
+
+| Flujo | Descripción | ¿Aplica al caso? |
+|-------|-------------|-----------------|
+| **Git Flow** | Ramas release, hotfix, develop, feature | Complejo para equipo pequeño |
+| **GitHub Flow** | Solo main y feature branches, deploy continuo | Simple y efectivo |
+| **Trunk-Based** | Todo en main con feature flags | Riesgoso sin pruebas automatizadas |
+
+**Elección: GitHub Flow adaptado** — porque:
+- El equipo es pequeño (1-3 personas)
+- Las entregas siguen un ritmo MVP incremental
+- No se necesitan ramas release complejas
+- Permite iteraciones rápidas entre módulos
+
+**Flujo adoptado:**
+```
+feature/* → develop → main
+```
+- `feature/*` — desarrollo de cada módulo del MVP
+- `develop` — integración y pruebas antes de producción  
+- `main` — versión estable y desplegable del proyecto
+
 ##  Milestones del proyecto
 
 | Milestone | Descripción | Fecha límite |
