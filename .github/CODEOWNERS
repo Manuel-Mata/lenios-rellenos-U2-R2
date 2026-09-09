@@ -6,5 +6,6 @@
 # Backend - responsable de la API REST y lógica de negocio
 /backend/ @Manuel-Mata
 
-# Configuración del proyecto
-/.github/ @Manuel-Mata
+# Configuración crítica del repositorio
+/README.md                     @Manuel-Mata
+/.github/                      @Manuel-Mata

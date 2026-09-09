@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fef6e4;
+  color: #2d2d2d;
+}
+
+header {
+  background-color: #d94f30;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+#catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
